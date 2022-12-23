@@ -1,0 +1,51 @@
+#include<stdio.h>
+int main()
+{
+	int pin=1245,p,cash=10000,option,amount;
+	do
+	{
+	printf("welcome to indian bank atm\n");
+	printf("insert the card\n");
+	printf("enter the pin\n");
+	scanf("%d",&p);
+	if(p!=pin)
+	{
+		printf("pin is invalid\n");
+	}
+	else
+	{
+		printf("menu\n1.check balance\n2.withdraw cash\n3.deposit cash\n");
+		printf("enter option\n");
+		scanf("%d",&option);
+		switch(option)
+		{
+			case 1: printf("available balance=%d\n",cash);
+			        break;
+			case 2: printf("enter amount to be withdraw\n");
+			        scanf("%d",&amount);
+			        if(amount>cash)
+			        {
+			        	printf("usufficient balance\n");
+					}
+					else
+					{
+					cash=cash-amount;
+					printf("available balance=%d\n",cash);
+				    }
+	        break;
+			case 3: printf("enter amount to be deposit\n");
+			        scanf("%d",&amount);
+			        cash=cash+amount;
+					printf("available balance=%d\n",cash);
+			        break;
+		    default :printf("invalid option");
+		}
+	}
+    }
+	while(option!=4);
+		return 0;
+	}
+	
+	
+	
+
